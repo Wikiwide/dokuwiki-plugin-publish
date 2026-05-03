@@ -118,7 +118,7 @@ class action_plugin_publish_mail extends DokuWiki_Action_Plugin {
                 $difflink = $this->hlp->getDifflink($ID, $oldrev, $rev);
             } else {
                 $aprpre = 'Previous';
-                $changelog = new PageChangelog($ID);
+                $changelog = new PageChangeLog($ID);
                 $oldrev = $changelog->getRelativeRevision($rev, -1);
                 $difflink = $this->hlp->getDifflink($ID, $oldrev, $rev);
             }
@@ -140,7 +140,7 @@ class action_plugin_publish_mail extends DokuWiki_Action_Plugin {
             $newlink = $this->revlink($ID, $rev);
             $body = str_replace('@URL@', $newlink, $body);
 
-            $changelog = new PageChangelog($ID);
+            $changelog = new PageChangeLog($ID);
             $revinfo = $changelog->getRevisionInfo($rev);
             /** @var DokuWiki_Auth_Plugin $auth */
             global $auth;
@@ -177,7 +177,7 @@ class action_plugin_publish_mail extends DokuWiki_Action_Plugin {
         } else {
             $rev=$REV;
         }
-        $changelog = new PageChangelog($ID);
+        $changelog = new PageChangeLog($ID);
         $revinfo = $changelog->getRevisionInfo($rev);
         $userinfo = $auth->getUserData($revinfo['user']);
         $receiver = $userinfo['mail'];
