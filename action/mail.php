@@ -1,4 +1,5 @@
 <?php
+use dokuwiki\ChangeLog\PageChangeLog;
 /**
  * @license GNU General Public License, version 2
  */
