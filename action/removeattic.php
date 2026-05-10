@@ -1,5 +1,5 @@
 <?php
-
+use dokuwiki\ChangeLog\PageChangeLog;
 if(!defined('DOKU_INC')) die();
 
 class action_plugin_publish_removeattic extends DokuWiki_Action_Plugin {
